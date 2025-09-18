@@ -1,51 +1,53 @@
 import { createTheme } from '@mui/material/styles';
+import { createContext } from 'react';
 
-// --- Light Theme ---
-// Defines the colors and styles for the light mode of the application.
+// Create a context to manage the theme state
+export const ThemeContext = createContext({
+  mode: 'light',
+  toggleTheme: () => {},
+});
+
+// Define the light theme
 export const lightTheme = createTheme({
   palette: {
     mode: 'light',
     primary: {
-      main: '#1976d2', // A standard blue for primary elements
+      main: '#1976d2',
     },
     secondary: {
-      main: '#dc004e', // A pink for secondary accents
+      main: '#dc004e',
     },
     background: {
-      default: '#f4f6f8', // A light grey for the main background
-      paper: '#ffffff',   // White for card backgrounds
-    },
-    text: {
-      primary: '#333333', // Dark grey for primary text
-      secondary: '#555555',// Lighter grey for secondary text
+      default: '#f4f6f8',
+      paper: '#ffffff',
     },
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
 });
 
-// --- Dark Theme ---
-// Defines the colors and styles for the dark mode of the application.
+// Define the dark theme
 export const darkTheme = createTheme({
   palette: {
     mode: 'dark',
     primary: {
-      main: '#90caf9', // A lighter blue for dark mode
+      main: '#90caf9',
     },
     secondary: {
-      main: '#f48fb1', // A lighter pink for dark mode
+      main: '#f48fb1',
     },
     background: {
-      default: '#121212', // A very dark grey for the main background
-      paper: '#1e1e1e',   // A slightly lighter grey for card backgrounds
+      default: '#121212',
+      paper: '#1e1e1e',
     },
     text: {
-      primary: '#e0e0e0',  // Light grey for primary text
-      secondary: '#b0b0b0',// Darker grey for secondary text
-    },
+      primary: '#ffffff',
+      secondary: '#b0bec5',
+    }
   },
   typography: {
-    fontFamily: 'Roboto, sans-serif',
+    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
   },
 });
+
