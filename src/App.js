@@ -1,22 +1,29 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Box } from '@mui/material';
 import Navbar from './components/Navbar';
-import Home from './components/Home';
-import Portfolio from './components/Portfolio';
+import Hero from './components/Hero';
+import Projects from './components/Projects';
 import Contact from './components/Contact';
 
-function App() {
+// --- App Component ---
+// This component structures the main layout of the single-page application.
+function App({ toggleTheme }) {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/portfolio" element={<Portfolio />} />
-        <Route path="/contact" element={<Contact />} />
-        {/* You can add a blog route later */}
-        {/* <Route path="/blog" element={<Blog />} /> */}
-      </Routes>
-    </Router>
+    <Box>
+      <Navbar toggleTheme={toggleTheme} />
+      <main>
+        {/* Each section corresponds to a part of the single-page layout */}
+        <section id="hero">
+          <Hero />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="contact">
+          <Contact />
+        </section>
+      </main>
+    </Box>
   );
 }
 
